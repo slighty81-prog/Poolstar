@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PoolStar Smart Care</title>
+<meta name="description" content="PoolStar Smart Care subscription and intelligent pool maintenance demo."/>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home"><img src="https://cdn.sanity.io/images/ftlb7tox/production/b17a050a40f9262272169a0eeecc0383b78e8646-500x500.png" alt="PoolStar"/><span>SMART CARE</span></a>
+  <nav><a href="#how">How it works</a><a href="#test">Test & recommend</a><a href="#plans">Packages</a><a href="#shop">Shop</a></nav>
+  <button class="ghost" id="accountBtn">Sign in</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">POOL CARE ON AUTOPILOT</div>
+    <h1>More summer.<br/><span>Less chemistry.</span></h1>
+    <p>Tell us about your pool, upload a test strip, and PoolStar Smart Care works out what your water needs — then keeps the right products coming before you run out.</p>
+    <div class="hero-actions"><button class="primary" onclick="openSignup()">Build my pool plan</button><button class="secondary" onclick="document.querySelector('#test').scrollIntoView({behavior:'smooth'})">Test my water</button></div>
+    <div class="trust-row"><span>✓ Personalised dosing</span><span>✓ Monthly replenishment</span><span>✓ PoolStar products</span></div>
+  </div>
+  <div class="summer-card">
+    <div class="sun"></div><div class="float f1">☀️</div><div class="float f2">🍉</div><div class="float f3">🦩</div>
+    <div class="pool-scene"><div class="ripple r1"></div><div class="ripple r2"></div><div class="ripple r3"></div><div class="party-copy"><b>POOL = SORTED.</b><small>Now go enjoy it.</small></div></div>
+    <div class="product-pop"><img src="https://cdn.sanity.io/images/ux0ugier/production/abafe915264e28b3b17b1b98b3bfe71e81ef2382-2048x2048.png?auto=format&fit=max&q=75&w=1000"/><div><b>Next box</b><span>Matched to your pool</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="section-head"><div><div class="eyebrow blue">SIMPLE BY DESIGN</div><h2>Three steps. Crystal-clear water.</h2></div><p>PoolStar recommends regular testing, balancing first, then sanitising. Smart Care wraps that routine into one easy monthly service.</p></div>
+  <div class="steps"><article><span>01</span><h3>Tell us about your pool</h3><p>Size, pool type, filtration, swim frequency, bather load and your normal water readings.</p></article><article><span>02</span><h3>Test & upload</h3><p>Upload a PoolStar test-strip photo or enter readings manually. The recommendation engine checks your water against PoolStar target ranges.</p></article><article><span>03</span><h3>We keep you stocked</h3><p>Your subscription level and replenishment forecast are driven by pool size, usage and test history.</p></article></div>
+</section>
+
+<section class="section test-zone" id="test">
+  <div class="test-grid">
+    <div><div class="eyebrow">SMART WATER TEST</div><h2>Snap. Read. Fix.</h2><p class="lead">Upload a photo of your PoolStar 4-in-1 strip. This demo produces a prototype image estimate, then turns the readings into a prioritised action plan.</p>
+      <div class="upload" id="dropZone"><input type="file" accept="image/*" id="stripFile"/><div class="upload-icon">📸</div><b>Upload test-strip photo</b><span>Phone photo works fine</span><img id="stripPreview" alt=""/></div>
+      <button class="primary full" id="analyzeBtn">Analyse my water</button>
+      <p class="fine">Prototype photo reading only. Always confirm the values against the colour chart on the PoolStar strip container and follow the product label before dosing.</p>
+    </div>
+    <div class="result-card" id="resultCard">
+      <div class="result-empty"><div>💧</div><h3>Your water plan appears here</h3><p>Upload a strip and we’ll show your readings, what to do first, which PoolStar product fits, and an estimated subscription tier.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plans">
+  <div class="section-head"><div><div class="eyebrow blue">MONTHLY BOXES</div><h2>Pick your level. We adapt the chemistry.</h2></div><p>Demo pricing for the commercial concept. Final pricing should be set after freight, dangerous-goods handling, channel strategy and gross-margin modelling.</p></div>
+  <div class="plans" id="plansGrid"></div>
+</section>
+
+<section class="section shop" id="shop">
+  <div class="section-head"><div><div class="eyebrow">POOLSTAR RANGE</div><h2>Need something now?</h2></div><p>Core PoolStar products can sit alongside the subscription service as one-off purchases and add-ons.</p></div>
+  <div class="products" id="productsGrid"></div>
+</section>
+
+<section class="section dashboard-wrap" id="dashboardSection" hidden>
+  <div class="section-head"><div><div class="eyebrow blue">MY POOL</div><h2 id="dashHello">Welcome back</h2></div><button class="ghost" onclick="logout()">Sign out</button></div>
+  <div class="dashboard" id="dashboard"></div>
+</section>
+
+<section class="cta"><img class="wave wave1" src="https://poolstar.co.nz/assets/purple-wave.png"/><img class="wave wave2" src="https://poolstar.co.nz/assets/blue-wave.png"/><div><div class="eyebrow">THE WEEKEND IS YOURS</div><h2>Pool chemistry should not be your hobby.</h2><p>Set up your pool once. Test regularly. Let Smart Care do the remembering.</p><button class="primary light" onclick="openSignup()">Start my Smart Care plan</button></div></section>
+</main>
+
+<footer><div class="footer-brand"><img src="https://cdn.sanity.io/images/ftlb7tox/production/b17a050a40f9262272169a0eeecc0383b78e8646-500x500.png"/><p>PoolStar Smart Care — concept subscription service using PoolStar by Damar Industries Ltd.</p></div><div><b>Important</b><p>This prototype is for demonstration. Chemical dose estimates require final validation against PoolStar labels, SDS information and approved operating rules before commercial release.</p></div></footer>
+
+<div class="modal" id="modal"><div class="modal-card"><button class="x" onclick="closeModal()">×</button><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
